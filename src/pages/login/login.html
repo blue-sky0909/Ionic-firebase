@@ -1,0 +1,37 @@
+<ion-header >
+    <ion-navbar hideBackButton="true">
+        <ion-title>
+            Hair Salon
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content">
+    <ion-card>
+        <ion-card-header>
+            <ion-item>
+                <ion-avatar class="avatar">
+                    <img src="assets/imgs/pexels-photo-432605.jpeg">
+                </ion-avatar>
+            </ion-item>
+        </ion-card-header>
+
+        <ion-card-content>
+            <form (submit)="login()">
+                <span [ngClass]="{'error-message': hasError}">{{error}}</span>
+                <ion-input type="email" placeholder="Username" [(ngModel)]="account.email" name="email"
+                [ngClass]="{'error': hasError}"></ion-input>
+                <ion-input type="password" placeholder="Password" [(ngModel)]="account.password" name="password" [ngClass]="{'error': hasError}"></ion-input>
+                <button ion-button block [color]="btnColor">Login</button>
+            </form>            
+            <button ion-button block clear (click)="resetPassword()" [color]="btnColor">Forgot Password</button>
+            <div class="signup-section">
+                <span class="new-account">Don't have account?</span>
+                <button ion-button round [color]="btnColor" (click)="signUp()">
+                    Sign Up
+                </button>
+            </div>
+        </ion-card-content>
+        
+    </ion-card>
+</ion-content>

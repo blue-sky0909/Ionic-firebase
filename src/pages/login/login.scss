@@ -1,0 +1,39 @@
+page-login {
+    .login-content{
+        background-image: url('../assets/imgs/login-background.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        .card {
+            border-radius: 7px;
+            padding: 15px;
+            .avatar {
+                img {
+                    margin: auto;
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+            .input {
+                border-radius: 3px;
+                border: 1px solid #dddddd;
+                padding-left: 10px;
+                margin-bottom: 15px;
+            }
+            .error {
+                border: 1px solid red !important;
+            }
+            .error-message {
+                color: red;
+            }
+            .signup-section {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .new-account {
+                    color: #a0a0a0;
+                }
+            }
+        }       
+    }
+}

@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-buttons start>
+            <button ion-button color="dark" clear (click)="logout()">Logout</button>
+        </ion-buttons>
+        <ion-title text-center>
+            Landing
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button color="dark" clear end (click)="goToPage()">Settings</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <div (click)="presentModal('image')">
+            <img src="assets/imgs/pexels-photo-432605.jpeg" />
+            <div class="card-title">Image</div>
+        </div>        
+    </ion-card>
+    <ion-card>
+        <div (click)="presentModal('gif')">
+            <img src="assets/imgs/pexels-photo-432605.jpeg"/>
+            <div class="card-title">GIF</div>
+        </div>        
+    </ion-card>
+    <ion-card>
+        <div (click)="presentModal('video')">
+            <img src="assets/imgs/pexels-photo-432605.jpeg"/>
+            <div class="card-title">Video</div>
+        </div>        
+    </ion-card>
+    <ion-card>
+        <div (click)="presentModal('search')">
+            <img src="assets/imgs/pexels-photo-432605.jpeg"/>
+            <div class="card-title">Gallery</div>  
+        </div>        
+    </ion-card>
+</ion-content>

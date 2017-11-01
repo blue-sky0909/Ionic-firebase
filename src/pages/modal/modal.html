@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            {{type}}
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()" icon-left>
+                <ion-icon name="arrow-back" showWhen="ios"></ion-icon>
+                <span ion-text color="primary" showWhen="ios">
+                    Back</span>
+                <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+    <ion-card [hidden]="type=='search'">
+        <p [ngClass]="{'error-message': hasError}">{{message}}</p>
+        <ion-input type="text" placeholder="Staff Id" class="input" [(ngModel)]="staffId"></ion-input>
+        <ion-input type="text" placeholder="First tag" class="input" [(ngModel)]="fTag"></ion-input>
+        <ion-input type="text" placeholder="Second tag" class="input" [(ngModel)]="sTag"></ion-input>
+        <ion-input type="text" placeholder="Third tag" class="input" [(ngModel)]="tTag"></ion-input>
+        <div class="file-upload">
+            <img [src]="photo" *ngIf="photo!='' && type!='video'" class="image-preview">
+            <source [src]="video" type="video/mp4" class="image-preview"  *ngIf="type=='video'">
+            <button ion-button block class="btn-upload" (click)="loadImage()" *ngIf="type=='image'"> Take a Photo </button>
+            <button ion-button block class="btn-upload" (click)="loadGif()" *ngIf="type=='gif'"> Take a Gif </button>
+            <button ion-button block class="btn-upload" (click)="loadVideo()" *ngIf="type=='video'"> Take a Video </button>
+            <button ion-button block class="btn-upload" (click)="fileChange()">
+                <span *ngIf="type=='image'"> Upload Photo </span> 
+                <span *ngIf="type=='gif'"> Upload Gif </span> 
+                <span *ngIf="type=='video'"> Upload Video </span> 
+            </button>
+        </div>
+    </ion-card>
+
+    <ion-card *ngIf="type=='search'">
+        <form (submit)="searchFile()">
+            <ion-item>
+                <ion-label>Select file type</ion-label>
+                <ion-select [(ngModel)]="search.type" name="searchType">
+                    <ion-option value="image">Image</ion-option>
+                    <ion-option value="gif">Gif</ion-option>
+                    <ion-option value="video">Video</ion-option>
+                </ion-select>
+            </ion-item>
+            <button ion-button block class="btn-search">Search</button>
+        </form>
+    </ion-card>
+
+    <ion-card *ngIf="searchResults.length > 0">
+        <ion-item *ngFor="let result of searchResults; let i = index">
+            <div class="file-item">
+                <img [src]="result.url" icon-left>
+                <div class="file-content">
+                    <p>StaffID: {{result.staffId}}</p>
+                    <p>First Tag: {{result.fTag}}</p>
+                    <p>Second Tag: {{result.sTag}}</p>
+                    <p>Third Tag: {{result.tTag}}</p>
+                </div>
+            </div>
+        </ion-item>
+    </ion-card>
+
+</ion-content>
+
+

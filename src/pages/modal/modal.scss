@@ -1,0 +1,51 @@
+page-modal {
+    .content {
+        background-color: #dddddd;
+        .card {
+            padding: 30px;
+        //    height: 100%;
+        //    width: 100%;
+            .error-message {
+                color: red;
+            }
+            .input {
+                border: 1px solid #dddddd;
+                border-radius: 3px;
+                padding-left: 10px;
+                margin-bottom: 15px;
+            }
+            .image-preview {
+                height: 150px;
+            }
+            // .file-upload {
+            //     position: relative;
+            //     .btn-file {
+            //         opacity: 0;
+            //         z-index: 999;
+            //     }
+            //     .btn-upload {
+            //         position: absolute;
+            //         top: 0;
+            //     }
+            // }
+            .button {
+                height: 40px;
+            }
+            .file-item {
+                display: flex !important;
+                img {
+                    width: 100px;
+                    height: 150px;
+                }
+                .file-content {
+                    margin-left: 15px;
+                    p {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+   
+    
+}

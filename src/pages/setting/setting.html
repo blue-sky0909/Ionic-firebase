@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title text-center>
+            Setting
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button color="dark" clear end (click)="logout()">Logout</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="content">
+    <ion-card>
+        <ion-label stacked class="lablel">Your Salon name</ion-label>
+        <ion-row>
+            <ion-col col-8>
+                <ion-input type="text" [(ngModel)]="companyName" ></ion-input>
+            </ion-col>
+            <ion-col col-4>
+                <button ion-button block [color]="btnColor" (click)="saveCompanyName()">Save</button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+
+    <ion-card>
+        <ion-label stacked class="lablel">Your Watermark Image</ion-label>
+        <ion-row>
+            <ion-col col-8>
+                <div class="file-upload">
+                    <ion-input type="file"(change)="fileChange($event)" class="btn-file"></ion-input>
+                    <button ion-button block class="btn-upload">Add New Iamge</button>
+                </div>
+            </ion-col>
+            <ion-col col-4>
+                <button ion-button block [color]="btnColor" (click)="saveMarkImg()">Save</button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+</ion-content>

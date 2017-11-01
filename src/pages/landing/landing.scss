@@ -1,0 +1,17 @@
+page-landing {
+    ion-card {
+        position: relative;
+        text-align: center;
+        width: 80% !important;
+        margin: 15px auto !important;
+    }
+
+      .card-title {
+        position: absolute;
+        top: 40%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+      }
+}

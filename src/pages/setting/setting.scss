@@ -1,0 +1,36 @@
+page-setting {
+    .content {
+        // background-color: #dddddd;
+        .card {
+            margin-bottom: 15px;
+            margin-top: 15px;
+            .row {
+                align-items: center;
+            }
+            .lablel {
+                font-size: 20px;
+                padding-left: 15px;
+            }
+            .input {
+                border: 1px solid #dddddd;
+                border-radius: 3px;
+                padding-left: 10px;
+            }
+            .button {
+                height: 40px;
+            }
+            .file-upload {
+                position: relative;
+                .btn-file {
+                    opacity: 0;
+                    z-index: 999;
+                }
+                .btn-upload {
+                    position: absolute;
+                    top: 0;
+                }
+            }
+        }
+    }    
+    
+}
